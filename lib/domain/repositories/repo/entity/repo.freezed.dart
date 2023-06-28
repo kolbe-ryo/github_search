@@ -31,6 +31,42 @@ mixin _$Repo {
   /// リポジトリ名（フル）
   String get fullName => throw _privateConstructorUsedError;
 
+  /// 説明
+  String? get description => throw _privateConstructorUsedError;
+
+  /// スター数
+  RepoCount get stargazersCount => throw _privateConstructorUsedError;
+
+  /// ウォッチャー数
+  RepoCount get watchersCount => throw _privateConstructorUsedError;
+
+  /// プロジェクト言語
+  RepoLanguage get language => throw _privateConstructorUsedError;
+
+  /// フォーク数
+  RepoCount get forksCount => throw _privateConstructorUsedError;
+
+  /// Issue数
+  RepoCount get openIssuesCount => throw _privateConstructorUsedError;
+
+  /// デフォルトブランチ
+  String get defaultBranch => throw _privateConstructorUsedError;
+
+  /// リポジトリURL
+  String? get repoUrl => throw _privateConstructorUsedError;
+
+  /// スター数URL
+  String? get stargazersUrl => throw _privateConstructorUsedError;
+
+  /// ウォッチャー数URL
+  String? get watchersUrl => throw _privateConstructorUsedError;
+
+  /// フォーク数URL
+  String? get forksUrl => throw _privateConstructorUsedError;
+
+  /// Issue数URL
+  String? get issuesUrl => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $RepoCopyWith<Repo> get copyWith => throw _privateConstructorUsedError;
 }
@@ -45,7 +81,25 @@ abstract class $RepoCopyWith<$Res> {
       String avatarUrl,
       String? ownerUrl,
       String repoName,
-      String fullName});
+      String fullName,
+      String? description,
+      RepoCount stargazersCount,
+      RepoCount watchersCount,
+      RepoLanguage language,
+      RepoCount forksCount,
+      RepoCount openIssuesCount,
+      String defaultBranch,
+      String? repoUrl,
+      String? stargazersUrl,
+      String? watchersUrl,
+      String? forksUrl,
+      String? issuesUrl});
+
+  $RepoCountCopyWith<$Res> get stargazersCount;
+  $RepoCountCopyWith<$Res> get watchersCount;
+  $RepoLanguageCopyWith<$Res> get language;
+  $RepoCountCopyWith<$Res> get forksCount;
+  $RepoCountCopyWith<$Res> get openIssuesCount;
 }
 
 /// @nodoc
@@ -66,6 +120,18 @@ class _$RepoCopyWithImpl<$Res, $Val extends Repo>
     Object? ownerUrl = freezed,
     Object? repoName = null,
     Object? fullName = null,
+    Object? description = freezed,
+    Object? stargazersCount = null,
+    Object? watchersCount = null,
+    Object? language = null,
+    Object? forksCount = null,
+    Object? openIssuesCount = null,
+    Object? defaultBranch = null,
+    Object? repoUrl = freezed,
+    Object? stargazersUrl = freezed,
+    Object? watchersUrl = freezed,
+    Object? forksUrl = freezed,
+    Object? issuesUrl = freezed,
   }) {
     return _then(_value.copyWith(
       ownerName: null == ownerName
@@ -88,7 +154,95 @@ class _$RepoCopyWithImpl<$Res, $Val extends Repo>
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stargazersCount: null == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      watchersCount: null == watchersCount
+          ? _value.watchersCount
+          : watchersCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as RepoLanguage,
+      forksCount: null == forksCount
+          ? _value.forksCount
+          : forksCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      openIssuesCount: null == openIssuesCount
+          ? _value.openIssuesCount
+          : openIssuesCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      defaultBranch: null == defaultBranch
+          ? _value.defaultBranch
+          : defaultBranch // ignore: cast_nullable_to_non_nullable
+              as String,
+      repoUrl: freezed == repoUrl
+          ? _value.repoUrl
+          : repoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stargazersUrl: freezed == stargazersUrl
+          ? _value.stargazersUrl
+          : stargazersUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      watchersUrl: freezed == watchersUrl
+          ? _value.watchersUrl
+          : watchersUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      forksUrl: freezed == forksUrl
+          ? _value.forksUrl
+          : forksUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      issuesUrl: freezed == issuesUrl
+          ? _value.issuesUrl
+          : issuesUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RepoCountCopyWith<$Res> get stargazersCount {
+    return $RepoCountCopyWith<$Res>(_value.stargazersCount, (value) {
+      return _then(_value.copyWith(stargazersCount: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RepoCountCopyWith<$Res> get watchersCount {
+    return $RepoCountCopyWith<$Res>(_value.watchersCount, (value) {
+      return _then(_value.copyWith(watchersCount: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RepoLanguageCopyWith<$Res> get language {
+    return $RepoLanguageCopyWith<$Res>(_value.language, (value) {
+      return _then(_value.copyWith(language: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RepoCountCopyWith<$Res> get forksCount {
+    return $RepoCountCopyWith<$Res>(_value.forksCount, (value) {
+      return _then(_value.copyWith(forksCount: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RepoCountCopyWith<$Res> get openIssuesCount {
+    return $RepoCountCopyWith<$Res>(_value.openIssuesCount, (value) {
+      return _then(_value.copyWith(openIssuesCount: value) as $Val);
+    });
   }
 }
 
@@ -103,7 +257,30 @@ abstract class _$$_RepoCopyWith<$Res> implements $RepoCopyWith<$Res> {
       String avatarUrl,
       String? ownerUrl,
       String repoName,
-      String fullName});
+      String fullName,
+      String? description,
+      RepoCount stargazersCount,
+      RepoCount watchersCount,
+      RepoLanguage language,
+      RepoCount forksCount,
+      RepoCount openIssuesCount,
+      String defaultBranch,
+      String? repoUrl,
+      String? stargazersUrl,
+      String? watchersUrl,
+      String? forksUrl,
+      String? issuesUrl});
+
+  @override
+  $RepoCountCopyWith<$Res> get stargazersCount;
+  @override
+  $RepoCountCopyWith<$Res> get watchersCount;
+  @override
+  $RepoLanguageCopyWith<$Res> get language;
+  @override
+  $RepoCountCopyWith<$Res> get forksCount;
+  @override
+  $RepoCountCopyWith<$Res> get openIssuesCount;
 }
 
 /// @nodoc
@@ -120,6 +297,18 @@ class __$$_RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res, _$_Repo>
     Object? ownerUrl = freezed,
     Object? repoName = null,
     Object? fullName = null,
+    Object? description = freezed,
+    Object? stargazersCount = null,
+    Object? watchersCount = null,
+    Object? language = null,
+    Object? forksCount = null,
+    Object? openIssuesCount = null,
+    Object? defaultBranch = null,
+    Object? repoUrl = freezed,
+    Object? stargazersUrl = freezed,
+    Object? watchersUrl = freezed,
+    Object? forksUrl = freezed,
+    Object? issuesUrl = freezed,
   }) {
     return _then(_$_Repo(
       ownerName: null == ownerName
@@ -142,6 +331,54 @@ class __$$_RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res, _$_Repo>
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stargazersCount: null == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      watchersCount: null == watchersCount
+          ? _value.watchersCount
+          : watchersCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as RepoLanguage,
+      forksCount: null == forksCount
+          ? _value.forksCount
+          : forksCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      openIssuesCount: null == openIssuesCount
+          ? _value.openIssuesCount
+          : openIssuesCount // ignore: cast_nullable_to_non_nullable
+              as RepoCount,
+      defaultBranch: null == defaultBranch
+          ? _value.defaultBranch
+          : defaultBranch // ignore: cast_nullable_to_non_nullable
+              as String,
+      repoUrl: freezed == repoUrl
+          ? _value.repoUrl
+          : repoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stargazersUrl: freezed == stargazersUrl
+          ? _value.stargazersUrl
+          : stargazersUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      watchersUrl: freezed == watchersUrl
+          ? _value.watchersUrl
+          : watchersUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      forksUrl: freezed == forksUrl
+          ? _value.forksUrl
+          : forksUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      issuesUrl: freezed == issuesUrl
+          ? _value.issuesUrl
+          : issuesUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -154,7 +391,19 @@ class _$_Repo extends _Repo {
       required this.avatarUrl,
       required this.ownerUrl,
       required this.repoName,
-      required this.fullName})
+      required this.fullName,
+      this.description,
+      required this.stargazersCount,
+      required this.watchersCount,
+      required this.language,
+      required this.forksCount,
+      required this.openIssuesCount,
+      required this.defaultBranch,
+      this.repoUrl,
+      this.stargazersUrl,
+      this.watchersUrl,
+      this.forksUrl,
+      this.issuesUrl})
       : super._();
 
   /// オーナー名
@@ -177,6 +426,54 @@ class _$_Repo extends _Repo {
   @override
   final String fullName;
 
+  /// 説明
+  @override
+  final String? description;
+
+  /// スター数
+  @override
+  final RepoCount stargazersCount;
+
+  /// ウォッチャー数
+  @override
+  final RepoCount watchersCount;
+
+  /// プロジェクト言語
+  @override
+  final RepoLanguage language;
+
+  /// フォーク数
+  @override
+  final RepoCount forksCount;
+
+  /// Issue数
+  @override
+  final RepoCount openIssuesCount;
+
+  /// デフォルトブランチ
+  @override
+  final String defaultBranch;
+
+  /// リポジトリURL
+  @override
+  final String? repoUrl;
+
+  /// スター数URL
+  @override
+  final String? stargazersUrl;
+
+  /// ウォッチャー数URL
+  @override
+  final String? watchersUrl;
+
+  /// フォーク数URL
+  @override
+  final String? forksUrl;
+
+  /// Issue数URL
+  @override
+  final String? issuesUrl;
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -191,12 +488,52 @@ class _$_Repo extends _Repo {
             (identical(other.repoName, repoName) ||
                 other.repoName == repoName) &&
             (identical(other.fullName, fullName) ||
-                other.fullName == fullName));
+                other.fullName == fullName) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.stargazersCount, stargazersCount) ||
+                other.stargazersCount == stargazersCount) &&
+            (identical(other.watchersCount, watchersCount) ||
+                other.watchersCount == watchersCount) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.forksCount, forksCount) ||
+                other.forksCount == forksCount) &&
+            (identical(other.openIssuesCount, openIssuesCount) ||
+                other.openIssuesCount == openIssuesCount) &&
+            (identical(other.defaultBranch, defaultBranch) ||
+                other.defaultBranch == defaultBranch) &&
+            (identical(other.repoUrl, repoUrl) || other.repoUrl == repoUrl) &&
+            (identical(other.stargazersUrl, stargazersUrl) ||
+                other.stargazersUrl == stargazersUrl) &&
+            (identical(other.watchersUrl, watchersUrl) ||
+                other.watchersUrl == watchersUrl) &&
+            (identical(other.forksUrl, forksUrl) ||
+                other.forksUrl == forksUrl) &&
+            (identical(other.issuesUrl, issuesUrl) ||
+                other.issuesUrl == issuesUrl));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, ownerName, avatarUrl, ownerUrl, repoName, fullName);
+      runtimeType,
+      ownerName,
+      avatarUrl,
+      ownerUrl,
+      repoName,
+      fullName,
+      description,
+      stargazersCount,
+      watchersCount,
+      language,
+      forksCount,
+      openIssuesCount,
+      defaultBranch,
+      repoUrl,
+      stargazersUrl,
+      watchersUrl,
+      forksUrl,
+      issuesUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -211,7 +548,19 @@ abstract class _Repo extends Repo {
       required final String avatarUrl,
       required final String? ownerUrl,
       required final String repoName,
-      required final String fullName}) = _$_Repo;
+      required final String fullName,
+      final String? description,
+      required final RepoCount stargazersCount,
+      required final RepoCount watchersCount,
+      required final RepoLanguage language,
+      required final RepoCount forksCount,
+      required final RepoCount openIssuesCount,
+      required final String defaultBranch,
+      final String? repoUrl,
+      final String? stargazersUrl,
+      final String? watchersUrl,
+      final String? forksUrl,
+      final String? issuesUrl}) = _$_Repo;
   const _Repo._() : super._();
 
   @override
@@ -234,6 +583,54 @@ abstract class _Repo extends Repo {
 
   /// リポジトリ名（フル）
   String get fullName;
+  @override
+
+  /// 説明
+  String? get description;
+  @override
+
+  /// スター数
+  RepoCount get stargazersCount;
+  @override
+
+  /// ウォッチャー数
+  RepoCount get watchersCount;
+  @override
+
+  /// プロジェクト言語
+  RepoLanguage get language;
+  @override
+
+  /// フォーク数
+  RepoCount get forksCount;
+  @override
+
+  /// Issue数
+  RepoCount get openIssuesCount;
+  @override
+
+  /// デフォルトブランチ
+  String get defaultBranch;
+  @override
+
+  /// リポジトリURL
+  String? get repoUrl;
+  @override
+
+  /// スター数URL
+  String? get stargazersUrl;
+  @override
+
+  /// ウォッチャー数URL
+  String? get watchersUrl;
+  @override
+
+  /// フォーク数URL
+  String? get forksUrl;
+  @override
+
+  /// Issue数URL
+  String? get issuesUrl;
   @override
   @JsonKey(ignore: true)
   _$$_RepoCopyWith<_$_Repo> get copyWith => throw _privateConstructorUsedError;
