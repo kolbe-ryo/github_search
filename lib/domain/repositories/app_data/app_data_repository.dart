@@ -17,6 +17,8 @@ final searchReposOrderProvider = StateProvider<SearchReposOrder>((ref) {
 final searchReposSortProvider = StateProvider<SearchReposSort>((ref) {
   const key = AppDataKey.searchReposSort;
   final repository = ref.watch(appDataRepositoryProvider);
+  // SearchReposSortの変更を監視し、変更されたらSearchReposSortの値を変更値に変える。
+  // アプリ内のstateを直接変更するのではなく、Hiveを変更し、Hiveの変更をstateに反映する。
   repository.change<SearchReposSort>(key).listen((order) {
     ref.controller.state = order;
   });
