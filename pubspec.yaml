@@ -95,3 +95,6 @@ flutter_native_splash:
     icon_background_color: '#eeeeee'
     image_dark: 'assets/images/splash_android_12_dark.png'
     icon_background_color_dark: '#262626'
+
+import_path_converter:
+  relative: true

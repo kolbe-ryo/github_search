@@ -2,8 +2,10 @@
 // Use of this source code is governed by a MIT license that can be
 // found in the LICENSE file.
 
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+// Project imports:
 import 'value_object/query_string.dart';
 
 part 'query_history.freezed.dart';

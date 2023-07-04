@@ -2,8 +2,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
-import './value_object/repo_count.dart';
-import './value_object/repo_language.dart';
+import 'value_object/repo_count.dart';
+import 'value_object/repo_language.dart';
 
 part 'repo.freezed.dart';
 

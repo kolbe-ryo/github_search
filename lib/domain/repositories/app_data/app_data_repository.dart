@@ -1,7 +1,10 @@
+// Package imports:
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
+import 'entity/app_data_key.dart';
 import '../repo/entity/search_repos_order.dart';
 import '../repo/entity/search_repos_sort.dart';
-import 'entity/app_data_key.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// リポジトリ検索用オーダー値プロバイダー
 final searchReposOrderProvider = StateProvider<SearchReposOrder>((ref) {
@@ -14,11 +17,10 @@ final searchReposOrderProvider = StateProvider<SearchReposOrder>((ref) {
 });
 
 /// リポジトリ検索用ソート値プロバイダー
+/// TODO: Hiveに永続化されているか確認すること（ブレークポイントを打つ）
 final searchReposSortProvider = StateProvider<SearchReposSort>((ref) {
   const key = AppDataKey.searchReposSort;
   final repository = ref.watch(appDataRepositoryProvider);
-  // SearchReposSortの変更を監視し、変更されたらSearchReposSortの値を変更値に変える。
-  // アプリ内のstateを直接変更するのではなく、Hiveを変更し、Hiveの変更をstateに反映する。
   repository.change<SearchReposSort>(key).listen((order) {
     ref.controller.state = order;
   });

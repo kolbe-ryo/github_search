@@ -1,5 +1,8 @@
-import 'entity/query_history.dart';
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
+import 'entity/query_history.dart';
 
 /// 検索履歴一覧プロバイダー
 final queryHistoriesProviderFamily =
