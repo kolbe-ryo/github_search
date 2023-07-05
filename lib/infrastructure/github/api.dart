@@ -6,8 +6,8 @@ const githubSiteUrl = 'https://github.com';
 
 /// GitHub API の定義
 /// 各APIはUriを返す
-class GithubApi {
-  const GithubApi();
+class GitHubApi {
+  const GitHubApi();
 
   static const _scheme = 'https';
   static const _apiUrl = 'api.github.com';
