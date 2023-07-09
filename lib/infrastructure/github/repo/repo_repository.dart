@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../domain/exceptions.dart';
 import '../../../domain/repositories/repo/entity/search_repos_sort.dart';
 import '../../../domain/repositories/repo/entity/search_repos_result.dart';
@@ -10,6 +11,19 @@ import '../api.dart';
 import '../http_client.dart';
 import 'json_object/repo.dart';
 import 'json_object/search_repos_result.dart';
+
+/// GitHubApiプロバイダー
+final githubApiProvider = Provider<GitHubApi>(
+  (ref) => const GitHubApi(),
+);
+
+/// GitHub版リポジトリRepositoryプロバイダー
+final githubRepoRepositoryProvider = Provider<RepoRepository>(
+  (ref) => GitHubRepoRepository(
+    api: ref.watch(githubApiProvider),
+    client: ref.watch(githubHttpClientProvider),
+  ),
+);
 
 class GitHubRepoRepository implements RepoRepository {
   const GitHubRepoRepository({
