@@ -1,5 +1,4 @@
-import 'dart:convert';
-
+import '../../../domain/exceptions.dart';
 import '../../../domain/repositories/repo/entity/search_repos_sort.dart';
 import '../../../domain/repositories/repo/entity/search_repos_result.dart';
 import '../../../domain/repositories/repo/entity/search_repos_order.dart';
@@ -28,7 +27,7 @@ class GitHubRepoRepository implements RepoRepository {
     required SearchReposOrder order,
     int? perPage,
     int? page,
-  }) {
+  }) async {
     return client.get(
       uri: api.searchRepos(
         queryString: queryString,
@@ -53,15 +52,43 @@ class GitHubRepoRepository implements RepoRepository {
   Future<Repo> getRepo({
     required String ownerName,
     required String repoName,
-  }) {
-    // TODO: implement getRepo
-    throw UnimplementedError();
+  }) async {
+    return client.get(
+      uri: api.getRepo(
+        ownerName: ownerName,
+        repoName: repoName,
+      ),
+      responseBuilder: (data) => repoBuilder(RepoJsonObject.fromJson(data)),
+    );
   }
 
   @override
-  Future<String> getReadme({required Repo repo}) {
-    // TODO: implement getReadme
-    throw UnimplementedError();
+  Future<String> getReadme({required Repo repo}) async {
+    // READMEファイル名のパターン（優先度順）
+    const fileNames = <String>[
+      'README.md',
+      'ReadMe.md',
+      'Readme.md',
+      'readme.md',
+    ];
+    for (final fileName in fileNames) {
+      final uri = Uri.parse(
+        'https://raw.githubusercontent.com/${repo.ownerName}/${repo.repoName}/${repo.defaultBranch}/$fileName',
+      );
+      try {
+        return await client.getRaw(uri: uri);
+      } on NetworkException catch (error) {
+        // 404 の場合はファイル名を変えてリトライする
+        if (error.code == NetworkException.codeNotFound) {
+          continue;
+        }
+
+        // 404 以外のエラーは即時 rethrow する
+        rethrow;
+      }
+    }
+    // 最終的に取得できなかったら 404 を返す
+    throw NetworkException.notFound();
   }
 
   static Repo repoBuilder(RepoJsonObject jsonObject) {
