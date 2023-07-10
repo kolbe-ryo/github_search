@@ -1,7 +1,11 @@
+// Flutter imports:
 import 'package:flutter/services.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// Project imports:
 import '../../util/logger.dart';
 import 'exception/url_launcher_exception.dart';
 import 'state/url_launch_data.dart';

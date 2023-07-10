@@ -1,5 +1,7 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Project imports:
 import '../../../domain/repositories/query_history/entity/query_history.dart';
 
 /// 検索履歴一覧プロバイダー

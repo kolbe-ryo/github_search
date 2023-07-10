@@ -2,9 +2,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'entity/app_data_key.dart';
 import '../repo/entity/search_repos_order.dart';
 import '../repo/entity/search_repos_sort.dart';
+import 'entity/app_data_key.dart';
 
 /// リポジトリ検索用オーダー値プロバイダー
 final searchReposOrderProvider = StateProvider<SearchReposOrder>((ref) {

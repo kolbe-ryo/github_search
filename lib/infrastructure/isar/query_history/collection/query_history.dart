@@ -1,3 +1,4 @@
+// Package imports:
 import 'package:isar/isar.dart';
 
 part 'query_history.g.dart';

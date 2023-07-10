@@ -1,9 +1,12 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import '../../../domain/exceptions.dart';
-import '../../../domain/repositories/repo/entity/search_repos_sort.dart';
-import '../../../domain/repositories/repo/entity/search_repos_result.dart';
-import '../../../domain/repositories/repo/entity/search_repos_order.dart';
 import '../../../domain/repositories/repo/entity/repo.dart';
+import '../../../domain/repositories/repo/entity/search_repos_order.dart';
+import '../../../domain/repositories/repo/entity/search_repos_result.dart';
+import '../../../domain/repositories/repo/entity/search_repos_sort.dart';
 import '../../../domain/repositories/repo/entity/value_object/repo_count.dart';
 import '../../../domain/repositories/repo/entity/value_object/repo_language.dart';
 import '../../../domain/repositories/repo/repo_repository.dart';
