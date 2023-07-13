@@ -28,3 +28,7 @@ class ReposState with _$ReposState {
     );
   }
 }
+
+class ReposStateNotifier extends StateNotifier<AsyncValue<ReposState>> {
+  ReposStateNotifier(super.state);
+}
