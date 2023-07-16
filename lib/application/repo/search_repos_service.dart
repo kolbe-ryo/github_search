@@ -1,5 +1,7 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Project imports:
 import '../../domain/exceptions.dart';
 import '../../domain/repositories/app_data/app_data_repository.dart';
 import '../../domain/repositories/query_history/entity/query_history.dart';

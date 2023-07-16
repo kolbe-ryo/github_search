@@ -2,9 +2,11 @@
 // Use of this source code is governed by a MIT license that can be
 // found in the LICENSE file.
 
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
 
+// Project imports:
 import '../../../domain/repositories/query_history/entity/query_history.dart';
 import '../../../domain/repositories/query_history/query_history_repository.dart';
 import '../../../util/logger.dart';
