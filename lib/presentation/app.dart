@@ -1,8 +1,10 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Project imports:
 import '../application/url_launcher/exception/url_launcher_exception.dart';
 import '../application/url_launcher/state/url_launch_data.dart';
 import '../application/url_launcher/state/url_launch_result.dart';

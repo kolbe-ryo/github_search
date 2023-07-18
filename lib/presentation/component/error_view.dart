@@ -1,7 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
 
+// Project imports:
 import '../../../domain/exceptions.dart';
 import '../../../util/logger.dart';
 

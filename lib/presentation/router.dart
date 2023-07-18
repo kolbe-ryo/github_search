@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+// Project imports:
 import '../application/repo/state/current_repo.dart';
 import '../domain/repositories/repo/entity/repo.dart';
 import '../domain/repositories/repo/entity/repo_param.dart';
@@ -12,7 +16,36 @@ import 'page/repo/repo_index_page.dart';
 import 'page/repo/repo_view_page.dart';
 import 'repo_search_page.dart';
 
-// part 'router.g.dart';
+part 'router.g.dart';
+
+final routerProvider = Provider<GoRouter>(
+  (ref) => GoRouter(
+    initialLocation: '/repos',
+    routes: $appRoutes,
+
+    // エラー画面
+    errorPageBuilder: (context, state) => ErrorRoute(state.error).buildPage(context, state),
+    observers: [pageRouteObserver],
+    debugLogDiagnostics: !kReleaseMode,
+  ),
+);
+
+@TypedGoRoute<RepoIndexRoute>(
+  path: '/repos',
+  routes: [
+    TypedGoRoute<RepoSearchRoute>(
+      path: 'search',
+    ),
+    TypedGoRoute<RepoViewRoute>(
+      path: ':ownerName/:repoName',
+      routes: [
+        TypedGoRoute<AvatarPreviewRoute>(
+          path: 'avatar',
+        ),
+      ],
+    ),
+  ],
+)
 
 /// リポジトリ一覧画面
 class RepoIndexRoute extends GoRouteData {
