@@ -30,6 +30,7 @@ final routerProvider = Provider<GoRouter>(
   ),
 );
 
+/// ルーティングテーブル
 @TypedGoRoute<RepoIndexRoute>(
   path: '/repos',
   routes: [
