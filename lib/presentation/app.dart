@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 // Project imports:
 import '../application/url_launcher/exception/url_launcher_exception.dart';
@@ -12,7 +13,6 @@ import '../application/url_launcher/state/url_launch_result.dart';
 import '../util/extention.dart';
 import '../util/logger.dart';
 import 'theme.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 class GitHubSearchApp extends StatelessWidget {
   const GitHubSearchApp({
